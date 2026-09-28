@@ -3,7 +3,6 @@
 import { useMemo, useState, useTransition } from "react";
 import { awardPoints } from "./actions";
 import type { PointAward, PointCategory, Student } from "@/lib/types";
-import { DEMO_DAY_RUBRIC, RUBRIC_SCALE, isDemoDayCategory } from "@/lib/rubric";
 
 export function AwardPanel({
   students,
@@ -172,7 +171,7 @@ export function AwardPanel({
         })}
       </div>
 
-      {/* Manual points (Demo Day, Bonus, deductions) */}
+      {/* Manual points (Bonus, deductions) */}
       {category && (manual || true) && (
         <div className="mb-3 flex items-center gap-2">
           <label className="text-sm text-slate-600">Points</label>
@@ -190,20 +189,6 @@ export function AwardPanel({
         </div>
       )}
 
-      {/* Demo Day rubric */}
-      {category && isDemoDayCategory(category.name) && (
-        <div className="mb-3 rounded-lg border border-amber-200 bg-amber-50 p-3 text-xs text-amber-900">
-          <p className="mb-1 font-semibold">🚀 Demo Day rubric — 6 dimensions × 0–5 (max 30)</p>
-          <ul className="space-y-0.5">
-            {DEMO_DAY_RUBRIC.map((d) => (
-              <li key={d.name}>
-                <span className="font-medium">{d.name}:</span> {d.measures}
-              </li>
-            ))}
-          </ul>
-          <p className="mt-1.5 text-amber-700">{RUBRIC_SCALE}</p>
-        </div>
-      )}
 
       {/* Note */}
       {category && (

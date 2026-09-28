@@ -4,7 +4,6 @@ import { useMemo, useState, useTransition, useEffect } from "react";
 import { resolveCurrentDay } from "@/lib/program";
 import { awardPoints } from "@/app/dashboard/actions";
 import { updatePointAward, deletePointAward } from "@/app/students/actions";
-import { DEMO_DAY_RUBRIC, RUBRIC_SCALE, isDemoDayCategory } from "@/lib/rubric";
 import type { Student, PointCategory, ProgramDay, PointAward } from "@/lib/types";
 
 interface PointsManagementProps {
@@ -402,20 +401,6 @@ export function PointsManagement({
               )}
             </div>
 
-            {/* Demo Day rubric */}
-            {selectedCategory && isDemoDayCategory(selectedCategory.name) && (
-              <div className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-xs text-amber-900">
-                <p className="mb-1 font-semibold">🚀 Demo Day rubric — 6 dimensions × 0–5 (max 30)</p>
-                <ul className="space-y-0.5">
-                  {DEMO_DAY_RUBRIC.map((d) => (
-                    <li key={d.name}>
-                      <span className="font-medium">{d.name}:</span> {d.measures}
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-1.5 text-amber-700">{RUBRIC_SCALE}</p>
-              </div>
-            )}
 
             {/* Notes */}
             <div>

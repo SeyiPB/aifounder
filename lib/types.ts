@@ -19,6 +19,8 @@ export interface Student {
   cohort_year: number;
   gender: Gender | null;
   pin: string | null;
+  startup_name: string | null;
+  one_liner: string | null;
   created_at: string;
 }
 
@@ -29,6 +31,7 @@ export interface ProgramDay {
   week_number: number;
   title: string;
   theme: string | null;
+  mode: "in_person" | "virtual";
 }
 
 export interface Attendance {

@@ -171,9 +171,8 @@ alter publication supabase_realtime add table public.point_awards;
 -- =============================================================================
 
 -- Program days: 4 weeks × Mon–Fri, 5:00–7:00 PM.
--- Mon Sep 28 – Fri Oct 23, 2026. ⚠️ In-person weekdays are an ASSUMPTION
--- (Tuesday + Friday at Civic Hall, so the Friday quiz and Demo Day are in the
--- room) — fix with: update program_days set mode = ... where day_number in (...).
+-- Mon Sep 28 – Fri Oct 23, 2026. In person at Civic Hall: Week 1 Mon + Tue;
+-- Weeks 2–4 Thu + Fri (so the Week 2/3 quizzes and Demo Day are in the room).
 do $$
 declare
   v_start date := '2026-09-28';  -- first Monday of the program
@@ -184,7 +183,11 @@ begin
          ((d.n - 1) / 5) + 1,
          d.title,
          d.theme,
-         case when (d.n - 1) % 5 in (1, 4) then 'in_person' else 'virtual' end
+         case
+           when d.n <= 5 and (d.n - 1) % 5 in (0, 1) then 'in_person'  -- Wk 1: Mon, Tue
+           when d.n > 5  and (d.n - 1) % 5 in (3, 4) then 'in_person'  -- Wk 2–4: Thu, Fri
+           else 'virtual'
+         end
   from (values
     (1,  'Kickoff, Ground Rules & AI Crash Course (Meet Claude)', 'Week 1: AI Fundamentals + Intro to Entrepreneurship'),
     (2,  'Team Building & Founder Strengths',                     'Week 1: AI Fundamentals + Intro to Entrepreneurship'),

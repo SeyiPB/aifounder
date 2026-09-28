@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "FutureNYC AI Summer Camp — Tracker",
-  description: "Attendance, points, and quizzes for FutureNYC AI Summer Camp.",
+  title: "AI Founder Lab — Tracker",
+  description: "Attendance, points, quizzes and Demo Day judging for AI Founder Lab.",
 };
 
 export default function RootLayout({

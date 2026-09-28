@@ -119,7 +119,7 @@ export function ReportsView({
   function exportFinal() {
     const rows: (string | number)[][] = [["Rank", "Student", "Total Points"]];
     rankings.forEach((r) => rows.push([r.rank, r.name, r.total]));
-    downloadCSV(`FutureNYC_Final_Rankings_${today()}.csv`, rows);
+    downloadCSV(`AIFounderLab_Final_Rankings_${today()}.csv`, rows);
   }
 
   function exportPoints() {
@@ -130,7 +130,7 @@ export function ReportsView({
       const w = weekTotals.get(s.id) || [0, 0, 0, 0, 0];
       rows.push([s.name, w[0], w[1], w[2], w[3], w[4]]);
     });
-    downloadCSV(`FutureNYC_Points_By_Week_${today()}.csv`, rows);
+    downloadCSV(`AIFounderLab_Points_By_Week_${today()}.csv`, rows);
   }
 
   function exportAttendance() {
@@ -143,7 +143,7 @@ export function ReportsView({
       const pct = Math.round(((c.present + c.late) / total) * 100);
       rows.push([s.name, c.present, c.late, c.absent, c.excused, `${pct}%`]);
     });
-    downloadCSV(`FutureNYC_Attendance_Summary_${today()}.csv`, rows);
+    downloadCSV(`AIFounderLab_Attendance_Summary_${today()}.csv`, rows);
   }
 
   const tabs: { id: Tab; label: string }[] = [

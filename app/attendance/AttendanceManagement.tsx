@@ -298,7 +298,7 @@ export function AttendanceManagement({
     link.setAttribute("href", url);
     link.setAttribute(
       "download",
-      `FutureNYC_Attendance_Report_${new Date().toISOString().slice(0, 10)}.csv`,
+      `AIFounderLab_Attendance_Report_${new Date().toISOString().slice(0, 10)}.csv`,
     );
     document.body.appendChild(link);
     link.click();

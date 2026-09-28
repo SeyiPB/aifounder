@@ -92,7 +92,7 @@ export function Leaderboard({
         <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
           <div>
             <h1 className="text-2xl font-bold sm:text-4xl">
-              FutureNYC<span className="text-accent">AI</span> Leaderboard
+              AI Founder <span className="text-accent">Lab</span> Leaderboard
               {pulse && <span className="ml-3 align-middle text-base text-accent">● live</span>}
             </h1>
             <p className="text-sm text-slate-400">

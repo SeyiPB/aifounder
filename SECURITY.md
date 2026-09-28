@@ -1,4 +1,4 @@
-# Security Checklist — FutureNYC Tracker (Vercel + Supabase)
+# Security Checklist — AI Founder Lab Tracker (Vercel + Supabase)
 
 This app is small (single facilitator, 25 students) but it stores student names
 and is publicly projected. The threats that matter: leaking the service-role key,

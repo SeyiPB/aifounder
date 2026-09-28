@@ -9,6 +9,7 @@ const links = [
   { href: "/students", label: "Students" },
   { href: "/reports", label: "Reports" },
   { href: "/leaderboard", label: "Leaderboard" },
+  { href: "/judging", label: "Judging" },
 ];
 
 export function Nav({ email }: { email?: string }) {
@@ -16,7 +17,7 @@ export function Nav({ email }: { email?: string }) {
     <header className="sticky top-0 z-20 border-b border-black/20 bg-navy text-white">
       <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3">
         <Link href="/dashboard" className="font-bold text-white">
-          FutureNYC<span className="text-accent">AI</span>
+          AI Founder <span className="text-accent">Lab</span>
         </Link>
         <nav className="flex flex-1 flex-wrap gap-1 text-sm">
           {links.map((l) => (

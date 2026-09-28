@@ -10,7 +10,7 @@ export default function LoginPage({
       <div className="w-full max-w-sm rounded-2xl bg-white p-8 shadow-xl">
         <div className="mb-6 text-center">
           <div className="mx-auto mb-3 h-1.5 w-12 rounded-full bg-accent" />
-          <h1 className="text-xl font-bold text-navy">FutureNYC AI Camp</h1>
+          <h1 className="text-xl font-bold text-navy">AI Founder Lab</h1>
           <p className="text-sm text-slate-500">Facilitator sign in</p>
         </div>
 

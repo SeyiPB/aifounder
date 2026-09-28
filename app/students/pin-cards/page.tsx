@@ -19,6 +19,7 @@ export default async function PinCardsPage() {
   const proto = h.get("x-forwarded-proto") || (host.includes("localhost") ? "http" : "https");
   const playUrl = `${proto}://${host}/play`;
   const playDisplay = `${host}/play`;
+  const meDisplay = `${host}/me`;
 
   const roster = (students || []) as Student[];
 
@@ -30,7 +31,7 @@ export default async function PinCardsPage() {
           <Link href="/students" className="text-sm text-slate-500 hover:text-navy">
             ← Back to roster
           </Link>
-          <h1 className="text-2xl font-bold text-navy">Quiz PIN Cards</h1>
+          <h1 className="text-2xl font-bold text-navy">Founder PIN Cards</h1>
           <p className="text-sm text-slate-500">
             One card per student. Print, cut along the lines, and hand out on day one.
           </p>
@@ -46,19 +47,19 @@ export default async function PinCardsPage() {
             className="flex break-inside-avoid flex-col rounded-xl border border-slate-300 bg-white p-4 text-center print:border print:border-slate-400"
           >
             <div className="mb-1 text-xs font-semibold uppercase tracking-wider text-brand">
-              FutureNYC AI Camp
+              AI Founder Lab
             </div>
             <div className="text-sm font-bold leading-tight text-navy">{s.name}</div>
             <div className="mt-3 text-[10px] font-semibold uppercase tracking-wider text-slate-400">
-              Your Quiz PIN
+              Your PIN
             </div>
             <div className="font-mono text-3xl font-extrabold tracking-[0.3em] text-navy">
               {s.pin || "----"}
             </div>
             <div className="mt-3 border-t border-dashed border-slate-200 pt-2 text-[11px] leading-snug text-slate-500">
-              Go to <span className="font-semibold text-navy">{playDisplay}</span>
+              Quiz: <span className="font-semibold text-navy">{playDisplay}</span>
               <br />
-              Enter the code on screen + this PIN
+              My points: <span className="font-semibold text-navy">{meDisplay}</span>
             </div>
           </div>
         ))}

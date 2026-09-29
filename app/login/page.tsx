@@ -6,7 +6,7 @@ export default function LoginPage({
   searchParams: { error?: string; redirect?: string };
 }) {
   return (
-    <main className="min-h-screen grid place-items-center bg-ink px-4">
+    <main className="grid flex-1 place-items-center bg-ink px-4 py-12">
       <div className="w-full max-w-sm rounded-2xl bg-white p-8 shadow-xl">
         <div className="mb-6 text-center">
           <div className="mx-auto mb-3 h-1.5 w-12 rounded-full bg-accent" />

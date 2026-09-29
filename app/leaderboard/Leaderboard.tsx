@@ -87,7 +87,7 @@ export function Leaderboard({
   );
 
   return (
-    <main className={`min-h-screen bg-ink text-white ${display ? "p-6" : "p-4 sm:p-8"}`}>
+    <main className={`flex-1 bg-ink text-white ${display ? "p-6" : "p-4 sm:p-8"}`}>
       <div className="mx-auto max-w-5xl">
         <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
           <div>

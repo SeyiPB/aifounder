@@ -71,7 +71,7 @@ export function Me() {
 
   if (!data) {
     return (
-      <div className="grid min-h-screen place-items-center px-4">
+      <div className="grid flex-1 place-items-center px-4 py-12">
         <form
           onSubmit={(e) => {
             e.preventDefault();

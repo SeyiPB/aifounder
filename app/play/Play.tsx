@@ -96,7 +96,7 @@ export function Play() {
   // ---- Join screen ----
   if (!joined) {
     return (
-      <div className="grid min-h-screen place-items-center px-4">
+      <div className="grid flex-1 place-items-center px-4 py-12">
         <form onSubmit={handleJoin} className="w-full max-w-sm rounded-2xl bg-white p-8 text-slate-900 shadow-xl">
           <div className="mb-6 text-center">
             <div className="mx-auto mb-3 h-1.5 w-12 rounded-full bg-accent" />
@@ -137,7 +137,7 @@ export function Play() {
 
   // ---- Joined: render by status ----
   return (
-    <div className="grid min-h-screen place-items-center px-4 py-8">
+    <div className="grid flex-1 place-items-center px-4 py-12 py-8">
       <div className="w-full max-w-md text-center">
         <p className="mb-4 text-sm text-slate-400">Playing as <span className="font-semibold text-white">{displayName}</span></p>
 

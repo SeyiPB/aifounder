@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Footer, PartnerBar } from "@/components/Brand";
 
 export const metadata: Metadata = {
   title: "AI Founder Lab — Tracker",
@@ -13,7 +14,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="flex min-h-screen flex-col">
+        <PartnerBar />
+        <div className="flex flex-1 flex-col">{children}</div>
+        <Footer />
+      </body>
     </html>
   );
 }
